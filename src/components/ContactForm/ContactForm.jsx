@@ -33,7 +33,7 @@ export const ContactForm = () => {
       return toast.error(`${newContact.name} is already in contacts.`);
     } else {
       dispatch(addContact(newContact));
-      toast('Success! This contact will be added to your phone book.', {
+      toast('Success! This contact will be added to your Phonebook.', {
         icon: '👏',
       });
     }
