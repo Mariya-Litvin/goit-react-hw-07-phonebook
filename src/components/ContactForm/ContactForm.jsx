@@ -26,7 +26,8 @@ export const ContactForm = () => {
     };
 
     const newContactName = contacts.find(
-      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+      contact =>
+        contact.name.toLowerCase() === newContact.name.toLowerCase().trim()
     );
 
     if (newContactName) {
