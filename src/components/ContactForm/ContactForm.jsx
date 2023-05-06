@@ -1,7 +1,7 @@
-import { nanoid } from '@reduxjs/toolkit';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 import { ButtonForm, Form, InputForm, LabelForm } from './ContactForm.styled';
 
@@ -23,7 +23,6 @@ export const ContactForm = () => {
     let newContact = {
       number,
       name,
-      id: nanoid(),
     };
 
     const newContactName = contacts.find(
@@ -31,9 +30,12 @@ export const ContactForm = () => {
     );
 
     if (newContactName) {
-      return alert(`${newContact.name} is already in contacts.`);
+      return toast.error(`${newContact.name} is already in contacts.`);
     } else {
-      dispatch(addContacts(newContact));
+      dispatch(addContact(newContact));
+      toast('Success! This contact will be added to your phone book.', {
+        icon: '👏',
+      });
     }
   };
 

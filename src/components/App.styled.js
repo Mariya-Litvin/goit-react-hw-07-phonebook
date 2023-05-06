@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   min-height: 350px;
   max-height: max-content;
   border-radius: 5px;
-  background-color: #c5d0e6;
+  background-color: #7fb5b5;
   /* background-image: url('./../image/phone.jpg');
   background-size: cover;
   background-repeat: no-repeat;
